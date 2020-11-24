@@ -1,0 +1,11 @@
+import java.io.*;
+
+public class Main{
+    public static void main(String[] args)throws IOException{
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String s = br.readLine();
+        Double r = Double.parseDouble(s);
+        Double v = 4*3.1415926*r*r*r/3;
+        System.out.printf("%.3f",v);
+    }
+}
