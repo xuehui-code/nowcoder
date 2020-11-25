@@ -1,0 +1,29 @@
+import java.io.*;
+
+public class Main {
+    public static void main(String[] args)throws IOException{
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String[] str= br.readLine().split(" ");
+        double a = Double.parseDouble(str[0]);
+        int month =Integer.parseInt(str[1]);
+        int day = Integer.parseInt(str[2]);
+        int b = Integer.parseInt(str[3]);
+        
+        if(month == 11&&day == 11){
+            a = a*0.7;
+        }else if(month == 12&&day == 12){
+            a = a*0.8;
+        }else{
+            a = a;
+        }
+        
+        if(b == 1){
+            if(a<50){
+                a = 0;
+            }else{
+                a = a-50;
+            }
+        }
+        System.out.printf("%.2f",a);
+    }
+}
