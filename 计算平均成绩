@@ -1,0 +1,16 @@
+import java.io.*;
+
+public class Main{
+    public static void main(String[] args)throws IOException{
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String[] str = br.readLine().split(" ");
+        int x1 = Integer.parseInt(str[0]);
+        int x2 = Integer.parseInt(str[1]);
+        int x3 = Integer.parseInt(str[2]);
+        int x4 = Integer.parseInt(str[3]);
+        int x5 = Integer.parseInt(str[4]);
+        double avg = 0;
+        avg = (x1+x2+x3+x4+x5)/5.0;
+        System.out.printf("%.1f",avg);
+    }
+}
