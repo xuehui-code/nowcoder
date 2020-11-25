@@ -1,0 +1,18 @@
+import java.io.*;
+
+public class Main{
+    public static void main(String[] args)throws IOException{
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String[] str = br.readLine().split(" ");
+        int n = Integer.parseInt(str[0]);
+        int h = Integer.parseInt(str[1]);
+        int m = Integer.parseInt(str[2]);
+        int result = 0;
+        if(m%h==0){
+            result = n-m/h;
+        }else{
+            result = n-m/h-1;
+        }
+        System.out.println(result);
+    }
+}
