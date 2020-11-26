@@ -1,0 +1,26 @@
+import java.io.*;
+
+public class Main {
+    public static void main(String[] args)throws IOException{
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String s = null;
+        while((s = br.readLine())!=null){
+            int x = Integer.parseInt(s);
+            if(x == 200){
+                System.out.println("OK");
+            }else if(x == 202){
+                System.out.println("Accepted");
+            }else if(x == 400){
+                System.out.println("Bad Request");
+            }else if(x == 403){
+                System.out.println("Forbidden");
+            }else if(x == 404){
+                System.out.println("Not Found");
+            }else if(x == 500){
+                System.out.println("Internal Server Error");
+            }else if(x == 502){
+                System.out.println("Bad Gateway");
+            }
+        }
+    }
+}
