@@ -1,0 +1,22 @@
+import java.io.*;
+
+public class Main{
+    public static void main(String[] args)throws IOException{
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String[] str = br.readLine().split(" ");
+        float x[] = new float[3];
+        int index = 0;
+        for(int i=0;i<3;i++){
+            x[i] = Float.parseFloat(str[index]);
+            index++;
+        }
+        float sum = 0;
+        for(int i=0;i<3;i++){
+            sum = sum+x[i];
+        }
+        float avg = 0;
+        avg = sum/3;
+        System.out.printf("%.2f ",sum);
+        System.out.printf("%.2f",avg);
+    }
+}
