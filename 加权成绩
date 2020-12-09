@@ -1,0 +1,15 @@
+import java.io.*;
+import java.util.*;
+
+public class Main{
+    public static void main(String[] args)throws IOException{
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String[] str = br.readLine().split(" ");
+        float grade = 0.0f;
+        grade += Integer.parseInt(str[0])*0.2;
+        grade += Integer.parseInt(str[1])*0.1;
+        grade += Integer.parseInt(str[2])*0.2;
+        grade += Integer.parseInt(str[3])*0.5;
+        System.out.println(grade);
+    }
+}
