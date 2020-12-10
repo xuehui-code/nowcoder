@@ -1,0 +1,16 @@
+import java.io.*;
+
+public class Main{
+    public static void main(String[] args)throws IOException{
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in)); 
+        String str;
+        String s = "AOEIUaoeiu";
+        while((str=br.readLine())!=null){
+            if(s.indexOf(str) != -1){  //查找s在str中的索引值，若查找不到输出-1，即为else
+                System.out.println("Vowel");
+            }else{
+                System.out.println("Consonant");
+            }
+        }
+    }
+}
