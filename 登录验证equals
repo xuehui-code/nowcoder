@@ -1,0 +1,17 @@
+import java.io.*;
+
+public class Main{
+    public static void main(String[] args)throws IOException{
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String s;
+        while((s = br.readLine())!=null){
+            String[] str = s.split(" ");  //一空格为间隔分开两个数组
+            if(str[0].equals("admin")&&str[1].equals("admin")){   //都为true则登录正确
+                System.out.println("Login Success!");
+            }
+            else{
+                System.out.println("Login Fail!");
+            }
+        }
+    }
+}
