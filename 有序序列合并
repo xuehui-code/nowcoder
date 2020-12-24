@@ -1,0 +1,41 @@
+import java.io.*;
+
+public class Main{
+    public static void main(String[] args)throws IOException{
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String[] s = br.readLine().split(" ");
+        int n = Integer.parseInt(s[0]);
+        int m = Integer.parseInt(s[1]);
+        String[] nn = br.readLine().split(" ");
+        String[] mm = br.readLine().split(" ");
+        StringBuilder sb = new StringBuilder();
+        int indexn = 0;
+        int indexm = 0;
+        while(indexn!=n&&indexm!=m){
+            if(Integer.parseInt(nn[indexn])<Integer.parseInt(mm[indexm])){
+                sb.append(nn[indexn]);
+                sb.append(" ");
+                indexn++;
+            }else{
+                sb.append(mm[indexm]);
+                sb.append(" ");
+                indexm++;
+            }
+        }
+        if(indexn==n){
+            while(indexm!=m){
+                sb.append(mm[indexm]);
+                sb.append(" ");
+                indexm++;
+            }
+        }
+        if(indexm==m){
+            while(indexn!=n){
+                sb.append(nn[indexn]);
+                sb.append(" ");
+                indexn++;
+            }
+        }
+        System.out.println(sb.toString());
+    }
+}
