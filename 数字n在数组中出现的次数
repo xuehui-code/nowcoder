@@ -1,0 +1,23 @@
+import java.io.*;
+
+public class Main{
+    public static void main(String[] args)throws IOException{
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String s = br.readLine();
+        int n = Integer.parseInt(s);
+        String str[] = br.readLine().split(" ");
+        int[] sz = new int[n];
+        for(int i=0;i<n;i++){
+            sz[i] = Integer.parseInt(str[i]);
+        }
+        String m = br.readLine();
+        int x = Integer.parseInt(m);
+        int count = 0;
+        for(int i = 0;i<n;i++){
+            if(x == sz[i]){
+                count++;
+            }
+        }
+        System.out.println(count);
+    }
+}
