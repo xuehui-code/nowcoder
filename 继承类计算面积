@@ -1,0 +1,32 @@
+import java.io.*;
+
+public class Main{
+    public static void main(String[] args)throws IOException{
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String jx[] = br.readLine().split(" ");
+        int x = Integer.parseInt(jx[0]);
+        int y = Integer.parseInt(jx[1]);
+        String yx = br.readLine();
+        int r = Integer.parseInt(yx);
+        String zfx = br.readLine();
+        int l = Integer.parseInt(zfx);
+        double s = s2(r);
+        System.out.println(s1(x,y));
+        if(s*100%100==0){
+            System.out.println((int)s);
+        }else{
+            System.out.println((double)Math.round(s*100)/100);
+        }
+        System.out.println(s3(l));
+    }
+    public static int s1(int x,int y){
+        return x*y;
+    }
+    public static double s2(int r){
+        double s2 = 3.14*r*r;
+        return s2;
+    }
+    public static int s3(int l){
+        return l*l;
+    }
+}
