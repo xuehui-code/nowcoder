@@ -1,0 +1,27 @@
+import java.io.*;
+
+public class Main{
+    public static void main(String[] args)throws IOException{
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String[] s = br.readLine().split(" ");
+        int n = Integer.parseInt(s[0]);
+        int m = Integer.parseInt(s[1]);
+        int [][]jz = new int[n][m];
+        
+        for(int i=0;i<n;i++){
+            String[] x = br.readLine().split(" ");
+            for(int j=0;j<x.length;j++){
+                jz[i][j] = Integer.parseInt(x[j]);
+            }
+        }
+        int sum = 0;
+        for(int i=0;i<n;i++){
+            for(int j=0;j<m;j++){
+                if(jz[i][j]>0){
+                    sum = sum+jz[i][j];
+                }
+            }
+        }
+        System.out.println(sum);
+    }
+}
