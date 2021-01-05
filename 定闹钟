@@ -1,0 +1,31 @@
+import java.io.*;
+public class Main{
+    public static void main(String[] args)throws IOException{
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String[] s1 = br.readLine().split(" ");
+        String[] s2 = s1[0].split(":");
+        
+        long sleep = Long.parseLong(s1[1])+Long.parseLong(s2[1]);
+        long sh = Long.parseLong(s2[0]);
+        long h = sleep/60;
+        long m = sleep%60;
+        long hour;
+        String mp;
+        String hp;
+        hour = h+sh;
+       if(hour>=24){
+           hour = hour%24;
+       }
+       if(hour<10){
+           hp = "0"+hour;
+       }else{
+           hp = hour+"";
+       }
+       if(m<10){
+           mp = "0"+m;
+       }else{
+           mp = m+"";
+       }
+       System.out.print(hp+":"+mp);
+    }
+}
