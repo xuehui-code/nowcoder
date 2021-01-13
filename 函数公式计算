@@ -1,0 +1,28 @@
+import java.io.*;
+
+public class Main{
+    public static void main(String[] args)throws IOException{
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String[] s = br.readLine().split(" ");
+        double a = Double.parseDouble(s[0]);
+        double b = Double.parseDouble(s[1]);
+        double c = Double.parseDouble(s[2]);
+        double sum = max3(a+b,b,c)/(max3(a,b+c,c)+max3(a,b,b+c));
+        System.out.println(sum);
+    }
+    public static double max3(double a,double b,double c){
+        if(a>=b){
+            if(a>=c){
+                return a;
+            }else{
+                return c;
+            }
+        }else{
+            if(b>=c){
+                return b;
+            }else{
+                return c;
+            }
+        }
+    }
+}
