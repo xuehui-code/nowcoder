@@ -1,0 +1,71 @@
+import java.io.*;
+
+public class Main{
+    public static void main(String[] args)throws IOException{
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        char [][]input = new char[3][3];
+        for(int i=0;i<3;i++){
+            String row = br.readLine();
+            for(int j=0;j<3;j++){
+                input[i][j] = row.charAt(2*j);
+            }
+        }
+        
+        boolean Kwin = false;
+        boolean Bwin = false;
+        Kwin = checkWinner('K',input);
+        Bwin = checkWinner('B',input);
+        if(Kwin==true&&Bwin==true){
+            System.out.println("No winner!");
+        }else if(Kwin == true){
+            System.out.println("KiKi wins!");
+        }else if(Bwin == true){
+            System.out.println("BoBo wins!");
+        }else{
+            System.out.println("No winner!");
+        }
+    }
+    static boolean checkWinner(char c,char[][] table){
+        int Cnum = 0;
+        int size = 3;
+        //判断正对角线是否满足
+        for(int i=0;i<size;i++){
+            if(table[i][i] == c){
+                Cnum++;
+            }
+        }
+        if(Cnum == 3){
+            return true;
+        }
+        Cnum = 0;
+        //判断反对角线是否满足
+        if(table[0][2]==c&&table[1][1] == c&&table[2][0] == c){
+            return true;
+        }
+        //判断是否行满足
+        for(int i=0;i<size;i++){
+            for(int j=0;j<size;j++){
+                if(table[i][j] == c){
+                    Cnum++;
+                }
+            }
+            if(Cnum == 3){
+                return true;
+            }
+            Cnum = 0;
+        }
+        //判断是否列满足
+        for(int i=0;i<size;i++){
+            for(int j=0;j<size;j++){
+                if(table[j][i] == c){
+                    Cnum++;
+                }
+            }
+            if(Cnum == 3){
+                return true;
+            }
+            Cnum = 0;
+        }
+        return false;
+    }
+}
