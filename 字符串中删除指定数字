@@ -1,0 +1,22 @@
+import java.io.*;
+import java.util.*;
+
+public class Main{
+    public static void main(String[] args)throws IOException{
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int n = Integer.parseInt(br.readLine());
+        String[] s = br.readLine().split(" ");
+        ArrayList<Integer> arrayList = new ArrayList();
+        int num = Integer.parseInt(br.readLine());
+        for(int i=0;i<s.length;i++){
+            int a = Integer.parseInt(s[i]);
+            if(a!=num){
+                arrayList.add(a);
+            }
+        }
+        System.out.println(arrayList.size());
+        for(int i=0;i<arrayList.size();i++){
+            System.out.print(arrayList.get(i)+" ");
+        }
+    }
+}
