@@ -1,0 +1,25 @@
+import java.io.*;
+import java.util.*;
+import java.math.*;
+
+public class Main{
+    public static void main(String[] args)throws Exception{
+        int n = 0;
+        int m = 0;
+        for(int i=100;i<=999;i++){
+            double y = Math.sqrt(i);
+            for(int j=2;j<=y;j++){
+                if(i%j==0){
+                    m = 1;
+                    break;
+                }
+            }
+            if(m==0){
+                n++;
+            }else{
+                m=0;
+            }
+        }
+        System.out.println(n);
+    }
+}
