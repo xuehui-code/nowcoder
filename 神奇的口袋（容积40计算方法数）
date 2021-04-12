@@ -1,0 +1,30 @@
+import java.util.*;
+
+public class Main{
+    static int[] weight;  //原有物品的重量
+    static int N;  //物品总数量
+    static int count = 0;  /不同选择的方法数
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        while(sc.hasNext()){
+            N = sc.nextInt();
+            weight = new int[N+1];//从weight[1]开始放置  便于后期函数调用
+            for(int i=1;i<=N;i++){
+                weight[i] = sc.nextInt();
+            }
+            count(40,N);
+            System.out.println(count);
+        }
+    }
+    // s为剩余物品重量 n为剩余可选物品数量
+    public static void count(int s,int n){
+        if(s == 0){  //刚好40重量
+            ++count;
+            return;
+        }
+        if(s<0||(s>0&&n<1))  //超出40重量 或者 物品全部放完
+            return;
+        count(s-weight[n],n-1);
+        count(s,n-1);
+    }
+}
