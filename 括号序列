@@ -1,0 +1,23 @@
+import java.util.*;
+public class Solution {
+
+    public boolean isValid (String s) {
+        // write code here
+        Stack<Character> stack = new Stack<Character>();  //新建栈stack
+        for(char c:s.toCharArray()){  //遍历s 分析每一个c
+            if(c == '(')   //若是左括号 则进栈 右括号
+                stack.push(')');
+            else if(c == '[')
+                stack.push(']');
+            else if(c == '{')
+                stack.push('}');
+            else if(stack.empty()||stack.pop()!=c)
+                //若此时栈是空的 意味着之前并没有进栈右括号即之前未遍历左括号
+                //若栈内元素出栈之后与之后的c不同 即说明之前进栈的右括号遍历的左括号没有和之后的右括号一一对应
+                //当以上两个条件任意满足时 说明不是符合条件的例子 则false
+                return false;
+        }
+        return stack.empty();
+        //最后将一一对应的括号出栈之后，若栈空说明符合条件true 若栈不空说明还有括号没有一一对应不符合条件false
+    }
+}
