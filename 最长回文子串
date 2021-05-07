@@ -1,0 +1,30 @@
+import java.util.*;
+
+public class Solution {
+    public int getLongestPalindrome(String A, int n) {
+        if(n<2)   //如果n小于2 则不构成回文串返回n
+            return A.length();
+        int max = 0; //max是最后要求得最长回文子串的长度
+        for(int i=0;i<n;i++){  //遍历每一个位置的元素 判断其前一个后一个元素是否相等
+            if(n-i<=max/2)  //当遍历到某i时 满足该条件说明 即使以i为中心的回文串最长仍然不会改变原来的max值
+                break;
+            int left = i;  //left由i位置左移
+            int right = i;  //right由i位置右移  两数字来确定回文串的起始终止位置
+            while(right<n-1&&A.charAt(right+1)==A.charAt(right))  
+                //如果某i和他后面的值相等可能存在baab形式 此时left还是i right为i+1
+                //若为baaab形式也不会有影响 遍历到下一个a时的max值会更高将他取代
+                ++right;
+            while(right<n-1&&left>0&&A.charAt(right+1)==A.charAt(left-1)){
+                //确保right和left在数组范围内并且right和left值相等的情况下，将left左移right右移继续比较
+                //得到以此时i为中心的回文子串的最大长度right-left+1
+                ++right;
+                --left;
+            }
+            //每次遍历的i得到的回文子串的最大长度right-left+1与max比较 得到最大值max
+            if(right-left+1>max){
+                max = right-left+1;
+            }
+        }
+        return max;
+    }
+}
