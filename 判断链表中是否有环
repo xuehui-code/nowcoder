@@ -1,0 +1,17 @@
+public class Solution {
+    public boolean hasCycle(ListNode head) {
+        if(head == null){  //如果链表为空则false
+            return false;
+        }
+        ListNode slow = head;  //定义一个慢指针
+        ListNode fast = head;  //定义一个快指针速度是慢指针的二倍
+        while(fast!=null&&fast.next!=null){  //如果fast或者fast的下一个为空，则此时不存在环了 跳出循环
+            slow = slow.next;  //slow指针一倍速
+            fast = fast.next.next;  //fast指针二倍速
+            if(slow == fast){  //当slow和fast指向同一个元素时 说明存在环
+                return true;
+            }
+        }
+        return false;
+    }
+}
